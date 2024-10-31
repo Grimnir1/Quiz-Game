@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Game</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div id="welcome-screen">
+        <h1 align="center">Quiz Game!</h1>
+        <div style="width: 500px;">
+            <input type="text" id="name-input" placeholder="What is your name?">
+            <button align="center" id="start-button">Start Quiz</button>
+        </div>
+    </div>
+    
+    <div id="game-screen" style="display: none;">
+        <div id="player-name"></div>
+        <div id="timer">Time: <span id="time-value">10</span></div>
+        <div id="score">Score: <span id="score-value">0</span></div>
+        <div id="question"></div>
+        <div id="answers"></div>
+        <div id="result"></div>
+    </div>
+
+        <script src="script.js"></script>
+    </body>
+    </html>
