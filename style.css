@@ -65,3 +65,6 @@ input{
 #start-button{
     font-size: 1.25em;
 }
+#welcome-screen{
+    display: none;
+}

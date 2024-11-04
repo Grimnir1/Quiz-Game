@@ -73,10 +73,8 @@ const timerEl = document.getElementById('time-value');
 const playerNameEl = document.getElementById('player-name');
 
 function initializeGame() {
-
     welcomeScreenEl.style.display = 'block';
     gameScreenEl.style.display = 'none';
-    
 
     document.getElementById('start-button').addEventListener('click', () => {
         const nameInput = document.getElementById('name-input');
@@ -86,15 +84,18 @@ function initializeGame() {
         }
         playerName = nameInput.value.trim();
         playerNameEl.textContent = `Player: ${playerName}`;
-        welcomeScreenEl.style.display = 'none';
-        gameScreenEl.style.display = 'block';
+        
+        // Hide welcome screen and show game screen
+        welcomeScreenEl.style.display = 'none'; 
+        gameScreenEl.style.display = 'block'; 
+
         startQuiz();
     });
 }
 
 function startQuiz() {
     currentQuestion = 0;
-    score = 0;
+    score = 0;  
     selectedQuestions = [...questions];
     shuffleQuestions();
     selectedQuestions = selectedQuestions.slice(0, questionsPerGame);
