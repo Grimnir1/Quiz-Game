@@ -73,11 +73,11 @@ const timerEl = document.getElementById('time-value');
 const playerNameEl = document.getElementById('player-name');
 
 function initializeGame() {
-    // Show welcome screen, hide game screen
+
     welcomeScreenEl.style.display = 'block';
     gameScreenEl.style.display = 'none';
     
-    // Add event listener for the start button
+
     document.getElementById('start-button').addEventListener('click', () => {
         const nameInput = document.getElementById('name-input');
         if (nameInput.value.trim() === '') {
@@ -95,7 +95,6 @@ function initializeGame() {
 function startQuiz() {
     currentQuestion = 0;
     score = 0;
-    // Select 6 random questions from the pool
     selectedQuestions = [...questions];
     shuffleQuestions();
     selectedQuestions = selectedQuestions.slice(0, questionsPerGame);
@@ -160,12 +159,41 @@ function startTimer() {
 }
 
 function endQuiz() {
-    questionEl.textContent = "Quiz completed!";
-    answersEl.innerHTML = '';
-    resultEl.textContent = `Congratulations ${playerName}! Your final score is ${score} out of ${questionsPerGame * 10}.`;
-    timerEl.textContent = '';
+    if (score == 10) {
+        questionEl.textContent = "Quiz completed!";
+        answersEl.innerHTML = '';
+        resultEl.textContent = ` ${playerName}! Your final score is ${score} out of ${questionsPerGame * 10}.`;
+        timerEl.textContent = '';
+    }  else if (score == 20) {
+        questionEl.textContent = "Quiz completed!";
+        answersEl.innerHTML = '';
+        resultEl.textContent = ` ${playerName}! Your final score is ${score} out of ${questionsPerGame * 10}.`;
+        timerEl.textContent = '';
+    }  else if (score == 30) {
+        questionEl.textContent = "Quiz completed!";
+        answersEl.innerHTML = '';
+        resultEl.textContent = ` ${playerName}! Your final score is ${score} out of ${questionsPerGame * 10}.`;
+        timerEl.textContent = '';
+    }  else if (score == 40) {
+        questionEl.textContent = "Quiz completed!";
+        answersEl.innerHTML = '';
+        resultEl.textContent = ` ${playerName}! Your final score is ${score} out of ${questionsPerGame * 10}.`;
+        timerEl.textContent = '';
+    } else if (score == 50) {
+        questionEl.textContent = "Quiz completed!";
+        answersEl.innerHTML = '';
+        resultEl.textContent = `Very good ${playerName}! Your final score is ${score} out of ${questionsPerGame * 10}.`;
+        timerEl.textContent = '';
+    }  else if (score == 60) {
+        questionEl.textContent = "Quiz completed!";
+        answersEl.innerHTML = '';
+        resultEl.textContent = `Excellent ${playerName}! Your final score is ${score} out of ${questionsPerGame * 10}.`;
+        timerEl.textContent = '';
+    }
+
     
-    // Add play again button
+    
+
     const playAgainButton = document.createElement('button');
     playAgainButton.textContent = 'Play Again';
     playAgainButton.addEventListener('click', () => {
@@ -176,5 +204,4 @@ function endQuiz() {
     answersEl.appendChild(playAgainButton);
 }
 
-// Initialize the game when the page loads
 initializeGame();
