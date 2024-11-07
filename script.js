@@ -72,6 +72,7 @@ const scoreEl = document.getElementById('score-value');
 const timerEl = document.getElementById('time-value');
 const playerNameEl = document.getElementById('player-name');
 
+
 function initializeGame() {
     welcomeScreenEl.style.display = 'block';
     gameScreenEl.style.display = 'none';
@@ -81,15 +82,15 @@ function initializeGame() {
         if (nameInput.value.trim() === '') {
             alert('Please enter your name to start the quiz!');
             return;
-        }
+        }else{
+        welcomeScreenEl.style.display = 'none';
         playerName = nameInput.value.trim();
         playerNameEl.textContent = `Player: ${playerName}`;
         
-        // Hide welcome screen and show game screen
-        welcomeScreenEl.style.display = 'none'; 
         gameScreenEl.style.display = 'block'; 
 
         startQuiz();
+    }
     });
 }
 
