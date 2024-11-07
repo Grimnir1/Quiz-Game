@@ -8,6 +8,7 @@ body {
     background-image: url(Moon\ Night.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    overflow: hidden;
 }
 #quiz-container {
     background-color: white;
